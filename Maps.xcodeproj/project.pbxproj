@@ -486,8 +486,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+>>>>>>> Develop
+=======
+
 >>>>>>> Develop
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
@@ -510,8 +514,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+>>>>>>> Develop
+=======
+
 >>>>>>> Develop
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
