@@ -61,14 +61,30 @@
 		7B03AEC622315FE700F1E3F6 /* Maps */ = {
 			isa = PBXGroup;
 			children = (
+				7B03AED92231657100F1E3F6 /* Resource */,
+				7B03AEDA2231659E00F1E3F6 /* Source */,
+			);
+			path = Maps;
+			sourceTree = "<group>";
+		};
+		7B03AED92231657100F1E3F6 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
 				7B03AEC722315FE700F1E3F6 /* AppDelegate.swift */,
-				7B03AEC922315FE700F1E3F6 /* ViewController.swift */,
-				7B03AECB22315FE700F1E3F6 /* Main.storyboard */,
 				7B03AECE22315FE800F1E3F6 /* Assets.xcassets */,
 				7B03AED022315FE800F1E3F6 /* LaunchScreen.storyboard */,
 				7B03AED322315FE800F1E3F6 /* Info.plist */,
 			);
-			path = Maps;
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		7B03AEDA2231659E00F1E3F6 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				7B03AEC922315FE700F1E3F6 /* ViewController.swift */,
+				7B03AECB22315FE700F1E3F6 /* Main.storyboard */,
+			);
+			path = Source;
 			sourceTree = "<group>";
 		};
 		A2AB0EB410E27537A2C5F293 /* Pods */ = {
@@ -387,7 +403,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5P369B9Z7K;
-				INFOPLIST_FILE = TestRep/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Maps/Resource/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -406,7 +422,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5P369B9Z7K;
-				INFOPLIST_FILE = TestRep/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Maps/Resource/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
