@@ -53,17 +53,13 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
             marker.position = CLLocationCoordinate2D(latitude: pins.latitude, longitude: pins.longitute)
             
            for category in pins.categories {
-                
                 switch category.name {
-                    
                 case "restaurant":
                     marker.icon = UIImage(named: "store")
                 default:
                     marker.icon = UIImage(named: "")
                 }
-
             }
-            
             marker.map = self.googleMaps
         }
     }
@@ -98,7 +94,6 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
             if marker.position.latitude == name.latitude && marker.position.longitude == name.longitute {
                 infoWindow.titleMarkerLabel.text = name.name
                 infoWindow.descriptionMarkerLabel.text = name.name
-                
             }
         }
         return infoWindow
