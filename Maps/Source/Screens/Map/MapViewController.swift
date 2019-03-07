@@ -42,35 +42,46 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
         self.googleMaps.settings.compassButton = true
         self.googleMaps.settings.zoomGestures = true
         
-        
-        testPins()
+        setupPinsOnMapView()
 
     }
     
-    func testPins() {
+    func setupPinsOnMapView() {
 
         for pins in states {
             let marker = GMSMarker()
             marker.position = CLLocationCoordinate2D(latitude: pins.latitude, longitude: pins.longitute)
             
-//            marker.icon = UIImage(named: "settings")
+           for category in pins.categories {
+                
+                switch category.name {
+                    
+                case "restaurant":
+                    marker.icon = UIImage(named: "store")
+                default:
+                    marker.icon = UIImage(named: "")
+                }
+
+            }
+            
             marker.map = self.googleMaps
         }
-        
     }
     
     private func loadStatesData() {
         let realmInstance = try! Realm()
         var states = [StateModel]()
+        
         for state in realmInstance.objects(StateModel.self) {
             states.append(state)
-            
         }
+        
         self.states = states
     }
     
     func didTapMyLocationButton(for mapView: GMSMapView) -> Bool {
         let location: CLLocation? = googleMaps.myLocation
+        
         if location != nil {
             googleMaps.animate(toLocation: (location?.coordinate)!)
         }
