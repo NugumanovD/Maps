@@ -15,7 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7B03AEC422315FE700F1E3F6 /* TestRep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestRep.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B03AEC422315FE700F1E3F6 /* Maps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Maps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B03AEC722315FE700F1E3F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7B03AEC922315FE700F1E3F6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7B03AECC22315FE700F1E3F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -38,7 +38,7 @@
 		7B03AEBB22315FE700F1E3F6 = {
 			isa = PBXGroup;
 			children = (
-				7B03AEC622315FE700F1E3F6 /* TestRep */,
+				7B03AEC622315FE700F1E3F6 /* Maps */,
 				7B03AEC522315FE700F1E3F6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -46,12 +46,12 @@
 		7B03AEC522315FE700F1E3F6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7B03AEC422315FE700F1E3F6 /* TestRep.app */,
+				7B03AEC422315FE700F1E3F6 /* Maps.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		7B03AEC622315FE700F1E3F6 /* TestRep */ = {
+		7B03AEC622315FE700F1E3F6 /* Maps */ = {
 			isa = PBXGroup;
 			children = (
 				7B03AEC722315FE700F1E3F6 /* AppDelegate.swift */,
@@ -61,15 +61,15 @@
 				7B03AED022315FE800F1E3F6 /* LaunchScreen.storyboard */,
 				7B03AED322315FE800F1E3F6 /* Info.plist */,
 			);
-			path = TestRep;
+			path = Maps;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		7B03AEC322315FE700F1E3F6 /* TestRep */ = {
+		7B03AEC322315FE700F1E3F6 /* Maps */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7B03AED622315FE800F1E3F6 /* Build configuration list for PBXNativeTarget "TestRep" */;
+			buildConfigurationList = 7B03AED622315FE800F1E3F6 /* Build configuration list for PBXNativeTarget "Maps" */;
 			buildPhases = (
 				7B03AEC022315FE700F1E3F6 /* Sources */,
 				7B03AEC122315FE700F1E3F6 /* Frameworks */,
@@ -79,9 +79,9 @@
 			);
 			dependencies = (
 			);
-			name = TestRep;
+			name = Maps;
 			productName = TestRep;
-			productReference = 7B03AEC422315FE700F1E3F6 /* TestRep.app */;
+			productReference = 7B03AEC422315FE700F1E3F6 /* Maps.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -99,7 +99,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 7B03AEBF22315FE700F1E3F6 /* Build configuration list for PBXProject "TestRep" */;
+			buildConfigurationList = 7B03AEBF22315FE700F1E3F6 /* Build configuration list for PBXProject "Maps" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -112,7 +112,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7B03AEC322315FE700F1E3F6 /* TestRep */,
+				7B03AEC322315FE700F1E3F6 /* Maps */,
 			);
 		};
 /* End PBXProject section */
@@ -289,7 +289,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.nugumanovDmitry.TestRep;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nugumanovDmitry.Maps;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -307,7 +307,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.nugumanovDmitry.TestRep;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nugumanovDmitry.Maps;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -317,7 +317,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		7B03AEBF22315FE700F1E3F6 /* Build configuration list for PBXProject "TestRep" */ = {
+		7B03AEBF22315FE700F1E3F6 /* Build configuration list for PBXProject "Maps" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7B03AED422315FE800F1E3F6 /* Debug */,
@@ -326,7 +326,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7B03AED622315FE800F1E3F6 /* Build configuration list for PBXNativeTarget "TestRep" */ = {
+		7B03AED622315FE800F1E3F6 /* Build configuration list for PBXNativeTarget "Maps" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7B03AED722315FE800F1E3F6 /* Debug */,
