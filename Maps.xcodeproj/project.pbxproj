@@ -11,7 +11,6 @@
 		7B03AEC822315FE700F1E3F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B03AEC722315FE700F1E3F6 /* AppDelegate.swift */; };
 		7B03AECF22315FE800F1E3F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B03AECE22315FE800F1E3F6 /* Assets.xcassets */; };
 		7B03AED222315FE800F1E3F6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B03AED022315FE800F1E3F6 /* LaunchScreen.storyboard */; };
-		7B03AEF12231676C00F1E3F6 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B03AEDC2231676C00F1E3F6 /* State.swift */; };
 		7B03AEF22231676C00F1E3F6 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B03AEDF2231676C00F1E3F6 /* Language.swift */; };
 		7B03AEF32231676C00F1E3F6 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B03AEE02231676C00F1E3F6 /* Settings.swift */; };
 		7B03AEF42231676C00F1E3F6 /* SettingsLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B03AEE12231676C00F1E3F6 /* SettingsLanguage.swift */; };
@@ -25,7 +24,6 @@
 		7B03AEFC2231676C00F1E3F6 /* Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B03AEEB2231676C00F1E3F6 /* Controller.swift */; };
 		7B03AEFD2231676C00F1E3F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B03AEEC2231676C00F1E3F6 /* Main.storyboard */; };
 		7B03AEFE2231676C00F1E3F6 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B03AEED2231676C00F1E3F6 /* Main.swift */; };
-		7B03AEFF2231676C00F1E3F6 /* Restaurants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B03AEEE2231676C00F1E3F6 /* Restaurants.swift */; };
 		7B03AF002231676C00F1E3F6 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B03AEF02231676C00F1E3F6 /* LocationService.swift */; };
 /* End PBXBuildFile section */
 
@@ -38,7 +36,6 @@
 		7B03AECE22315FE800F1E3F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7B03AED122315FE800F1E3F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7B03AED322315FE800F1E3F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7B03AEDC2231676C00F1E3F6 /* State.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		7B03AEDF2231676C00F1E3F6 /* Language.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 		7B03AEE02231676C00F1E3F6 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		7B03AEE12231676C00F1E3F6 /* SettingsLanguage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsLanguage.swift; sourceTree = "<group>"; };
@@ -52,7 +49,6 @@
 		7B03AEEB2231676C00F1E3F6 /* Controller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Controller.swift; sourceTree = "<group>"; };
 		7B03AEEC2231676C00F1E3F6 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		7B03AEED2231676C00F1E3F6 /* Main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
-		7B03AEEE2231676C00F1E3F6 /* Restaurants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restaurants.swift; sourceTree = "<group>"; };
 		7B03AEF02231676C00F1E3F6 /* LocationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -109,9 +105,7 @@
 		7B03AEDB2231676C00F1E3F6 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				7B03AEDC2231676C00F1E3F6 /* State.swift */,
 				7B03AEDD2231676C00F1E3F6 /* Screens */,
-				7B03AEEE2231676C00F1E3F6 /* Restaurants.swift */,
 				7B03AEEF2231676C00F1E3F6 /* Services */,
 			);
 			path = Source;
@@ -342,14 +336,12 @@
 				7B03AEF22231676C00F1E3F6 /* Language.swift in Sources */,
 				7B03AEFE2231676C00F1E3F6 /* Main.swift in Sources */,
 				7B03AEF42231676C00F1E3F6 /* SettingsLanguage.swift in Sources */,
-				7B03AEFF2231676C00F1E3F6 /* Restaurants.swift in Sources */,
 				7B03AEF52231676C00F1E3F6 /* UIViewController.swift in Sources */,
 				7B03AEFB2231676C00F1E3F6 /* StateModel.swift in Sources */,
 				7B03AEFC2231676C00F1E3F6 /* Controller.swift in Sources */,
 				7B03AEC822315FE700F1E3F6 /* AppDelegate.swift in Sources */,
 				7B03AF002231676C00F1E3F6 /* LocationService.swift in Sources */,
 				7B03AEF32231676C00F1E3F6 /* Settings.swift in Sources */,
-				7B03AEF12231676C00F1E3F6 /* State.swift in Sources */,
 				7B03AEF82231676C00F1E3F6 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
