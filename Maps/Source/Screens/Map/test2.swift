@@ -1,5 +1,5 @@
 //
-//  test.swift
+//  test2.swift
 //  Maps
 //
 //  Created by Evgeniy Opryshko on 07/03/2019.
@@ -7,6 +7,3 @@
 //
 
 import Foundation
-
-
-//added test2
