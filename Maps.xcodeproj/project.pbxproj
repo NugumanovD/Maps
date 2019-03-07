@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		20664D051287CBA31402FB9C /* Pods_Maps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B526557C427E67CEB9423A1 /* Pods_Maps.framework */; };
+		4937050422318FDE009B5060 /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4937050322318FDE009B5060 /* test.swift */; };
 		7B03AEC822315FE700F1E3F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B03AEC722315FE700F1E3F6 /* AppDelegate.swift */; };
 		7B03AECF22315FE800F1E3F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B03AECE22315FE800F1E3F6 /* Assets.xcassets */; };
 		7B03AED222315FE800F1E3F6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B03AED022315FE800F1E3F6 /* LaunchScreen.storyboard */; };
@@ -30,6 +31,7 @@
 /* Begin PBXFileReference section */
 		1B526557C427E67CEB9423A1 /* Pods_Maps.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Maps.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		20290B54DC8AAC257C7CDE06 /* Pods-Maps.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Maps.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Maps/Pods-Maps.debug.xcconfig"; sourceTree = "<group>"; };
+		4937050322318FDE009B5060 /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
 		558E3E8B2AE5276BCD0CA604 /* Pods-Maps.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Maps.release.xcconfig"; path = "Pods/Target Support Files/Pods-Maps/Pods-Maps.release.xcconfig"; sourceTree = "<group>"; };
 		7B03AEC422315FE700F1E3F6 /* Maps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Maps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B03AEC722315FE700F1E3F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				7B03AEE62231676C00F1E3F6 /* MapViewController.swift */,
 				7B03AEE72231676C00F1E3F6 /* MapMarkerWindow.swift */,
 				7B03AEE82231676C00F1E3F6 /* MapMarkerWindowView.xib */,
+				4937050322318FDE009B5060 /* test.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -333,6 +336,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B03AEF92231676C00F1E3F6 /* MapMarkerWindow.swift in Sources */,
+				4937050422318FDE009B5060 /* test.swift in Sources */,
 				7B03AEF22231676C00F1E3F6 /* Language.swift in Sources */,
 				7B03AEFE2231676C00F1E3F6 /* Main.swift in Sources */,
 				7B03AEF42231676C00F1E3F6 /* SettingsLanguage.swift in Sources */,
@@ -481,8 +485,9 @@
 			baseConfigurationReference = 20290B54DC8AAC257C7CDE06 /* Pods-Maps.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5P369B9Z7K;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "$(SRCROOT)/Maps/Resource/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -490,6 +495,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.nugumanovDmitry.Maps;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -500,8 +506,9 @@
 			baseConfigurationReference = 558E3E8B2AE5276BCD0CA604 /* Pods-Maps.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5P369B9Z7K;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "$(SRCROOT)/Maps/Resource/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -509,6 +516,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.nugumanovDmitry.Maps;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
