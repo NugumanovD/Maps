@@ -1,9 +1,13 @@
 //
-//  test2.swift
+//  SavePoints.swift
 //  Maps
 //
-//  Created by Evgeniy Opryshko on 07/03/2019.
+//  Created by Evgeniy Opryshko on 10/03/2019.
 //  Copyright © 2019 Nugumanov Dmitry. All rights reserved.
 //
 
 import Foundation
+
+class RealmWorker {
+	
+}
