@@ -9,7 +9,7 @@
 import UIKit
 
 class SettingsLanguage: UITableViewController {
-
+	
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -39,11 +39,11 @@ class SettingsLanguage: UITableViewController {
 	
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		
-//		let cell = self.tableView.cellForRow(at: indexPath)
-//		guard let tit = cell?.textLabel?.text else {
-//			return
-//		}
-//		checkCurrentLanguege(titel: tit)
+		//		let cell = self.tableView.cellForRow(at: indexPath)
+		//		guard let tit = cell?.textLabel?.text else {
+		//			return
+		//		}
+		//		checkCurrentLanguege(titel: tit)
 		
 		switch (indexPath.section, indexPath.row) {
 		case (0,0):
@@ -71,7 +71,7 @@ class SettingsLanguage: UITableViewController {
 	
 	
 	func alert() {
-	
+		
 		switch Locale.deviceLanguage {
 		case "ua":
 			alert(message: "Будь ласка, перезапустіть пристрій, щоб нові налаштування вступили в силу.")
@@ -83,13 +83,13 @@ class SettingsLanguage: UITableViewController {
 		default:
 			alert(message: "Please restart the application for the new settings to take effect.")
 		}
-	
+		
 	}
-
+	
 	func checkCurrentLanguege(titel: String) {
 		if Locale.deviceLanguage == titel {
-				return
-			}
+			return
+		}
 		alert()
 	}
 	
