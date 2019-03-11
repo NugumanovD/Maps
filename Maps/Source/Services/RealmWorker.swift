@@ -7,7 +7,16 @@
 //
 
 import Foundation
+import RealmSwift
 
 class RealmWorker {
+	
+	func saveRealmArray(_ objects: [Object]) {
+		let realm = try! Realm()
+		print(realm.configuration.fileURL?.absoluteString ?? "")
+		try! realm.write {
+			realm.add(objects)
+		}
+	}
 	
 }

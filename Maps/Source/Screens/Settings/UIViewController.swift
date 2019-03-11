@@ -9,31 +9,31 @@
 import UIKit
 
 extension UIViewController {
-    
-    /// Transition to other ViewController with name or ID
-    ///
-    /// - Parameters:
-    ///   - viewcontroller: This parameter must specify the name of the ViewController before proceeding..
-    
-    
-    func transitionToViewController(name viewcontroller: String) {
-        var myViewController: UIViewController!
-        let storyboard = UIStoryboard(name: viewcontroller, bundle: nil)
-        myViewController = storyboard.instantiateViewController(withIdentifier: viewcontroller)
-        present(myViewController, animated: true, completion: nil)
-    }
-    
-    func transitionPushToViewController(name viewcontroller: String) {
-        let storyboard = UIStoryboard(name: viewcontroller, bundle: nil)
-        let secondVC = storyboard.instantiateViewController(withIdentifier: viewcontroller)
-        self.navigationController?.pushViewController(secondVC, animated: true)
-    }
-    
-    func transitionPushToViewControllerTest(stroryboard: String, viewController: String) {
-        let storyboard = UIStoryboard(name: stroryboard, bundle: nil)
-        let secondVC = storyboard.instantiateViewController(withIdentifier: viewController)
-        self.navigationController?.pushViewController(secondVC, animated: true)
-    }
+	
+	/// Transition to other ViewController with name or ID
+	///
+	/// - Parameters:
+	///   - viewcontroller: This parameter must specify the name of the ViewController before proceeding..
+	
+	
+	func transitionToViewController(name viewcontroller: String) {
+		var myViewController: UIViewController!
+		let storyboard = UIStoryboard(name: viewcontroller, bundle: nil)
+		myViewController = storyboard.instantiateViewController(withIdentifier: viewcontroller)
+		present(myViewController, animated: true, completion: nil)
+	}
+	
+	func transitionPushToViewController(name viewcontroller: String) {
+		let storyboard = UIStoryboard(name: viewcontroller, bundle: nil)
+		let secondVC = storyboard.instantiateViewController(withIdentifier: viewcontroller)
+		self.navigationController?.pushViewController(secondVC, animated: true)
+	}
+	
+	func transitionPushToViewControllerTest(stroryboard: String, viewController: String) {
+		let storyboard = UIStoryboard(name: stroryboard, bundle: nil)
+		let secondVC = storyboard.instantiateViewController(withIdentifier: viewController)
+		self.navigationController?.pushViewController(secondVC, animated: true)
+	}
 	
 	func alert(message: String, title: String = "") {
 		let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)

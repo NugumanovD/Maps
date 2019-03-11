@@ -1,13 +1,13 @@
 //
 //  Global.swift
-//  API
+//  Maps
 //
-//  Created by Michael on 6/22/18.
-//  Copyright © 2018 Mission Edition. All rights reserved.
+//  Created by Evgeniy Opryshko on 10/03/2019.
+//  Copyright © 2019 Nugumanov Dmitry. All rights reserved.
 //
 
 import Foundation
 
 struct Global {
-    static let url: URL = URL(string: "https://api.nasa.gov/planetary/apod?api_key=NNKOjkoul8n1CH18TWA9gwngW1s1SmjESPjNoUFo")!
+	static let url = "https://hortica-c67a4.firebaseio.com/points.json"
 }

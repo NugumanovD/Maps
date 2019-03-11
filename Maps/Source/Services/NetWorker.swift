@@ -1,5 +1,5 @@
 //
-//  GetPoints.swift
+//  NetWorker.swift
 //  Maps
 //
 //  Created by Evgeniy Opryshko on 10/03/2019.
@@ -8,11 +8,10 @@
 
 import Foundation
 
-class GetPoints {
+class NetWorker {
 	
 	func getData() {
-		
-		guard let gitUrl = URL(string: "https://hortica-c67a4.firebaseio.com/points.json") else { return }
+		guard let gitUrl = URL(string: Global.url) else { return }
 		URLSession.shared.dataTask(with: gitUrl) { (data, response
 			, error) in
 			guard let data = data else { return }
@@ -24,7 +23,7 @@ class GetPoints {
 			} catch let err {
 				print("Err", err)
 			}
-			}.resume()
-		
+			}
+			.resume()
 	}
 }
