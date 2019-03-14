@@ -10,6 +10,7 @@ import UIKit
 import GoogleMaps
 import GooglePlaces
 import RealmSwift
+import Realm
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -23,10 +24,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GMSServices.provideAPIKey(placesAPIKey)
         GMSPlacesClient.provideAPIKey(placesAPIKey)
         //        UITabBar.appearance().tintColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
+        let serializer = NetWorker()
+        let realm = try! Realm()
+        
+        if realm.isEmpty {
+            try! realm.write {
+                realm.deleteAll()
+            }
+            serializer.serialize()
+        }
         
         
-        if !UserDefaults.standard.bool(forKey: "db_install") {
-            self.loadDataBase()
+        let config = Realm.Configuration(
+            schemaVersion: 3,
+            migrationBlock: { migration, oldSchemaVersion in
+
+                print("migration succeeded")
+        })
+        Realm.Configuration.defaultConfiguration = config
+
+        let pins = realm.objects(PinList.self)
+        for pin in pins {
+            realm.beginWrite()
+            pin.owner = pin.person.first
+            try! realm.commitWrite()
+            if let owner = pin.owner {
+                print("\(owner)")
+            }
         }
         return true
     }
@@ -55,55 +79,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func loadDataBase() {
         //создаем объекты категорий
-        let restaurant = Category.getCategoryObject(
-            id: 0,
-            name: "restaurant",
-            iconImage: "")
         
-        let categories = [restaurant]
-        
+
         //создаем объекты стройний на карте
+
         
-        let pektoralHotel = StateModel.getStateObject(
-            id: 0,
-            name: "Пектораль",
-            latitude: 47.8171141648544,
-            longitute: 35.088985562324524,
-            categories: [restaurant])
-        
-        let horticaHotel = StateModel.getStateObject(
-            id: 1,
-            name: "Хортица",
-            latitude: 47.8205721644365,
-            longitute: 35.09705364704132,
-            categories: [restaurant])
-        
-        let sagaidachniyHotel = StateModel.getStateObject(
-            id: 2,
-            name: "Сагайдачный",
-            latitude: 47.824952,
-            longitute: 35.090359,
-            categories: [restaurant])
-        
-        let members = [pektoralHotel, horticaHotel, sagaidachniyHotel]
-        
+//        let members: [String] = []()
+
         //сохраняем наши объекты в хранилище
-        
-        let realmInstance = try! Realm()
-        try! realmInstance.write {
-            for category in categories {
-                realmInstance.add(category)
-            }
-            for member in members {
-                realmInstance.add(member)
-            }
-        }
-        
+
+//        let realmInstance = try! Realm()
+//        try! realmInstance.write {
+//            for category in categories {
+//                realmInstance.add(category)
+//            }
+//            for member in members {
+//                realmInstance.add(member)
+//            }
+//        }
+
         //помечаем в Defaults что БД была установлена
-        UserDefaults.standard.set(
-            true,
-            forKey: "db_install"
-        )
+//        UserDefaults.standard.set(
+//            true,
+//            forKey: "db_install"
+//        )
     }
     
     

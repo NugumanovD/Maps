@@ -7,23 +7,58 @@
 //
 
 import Foundation
+import RealmSwift
 
 class NetWorker {
-	
-	func getData() {
-		guard let gitUrl = URL(string: Global.url) else { return }
-		URLSession.shared.dataTask(with: gitUrl) { (data, response
-			, error) in
-			guard let data = data else { return }
-			do {
-				let decoder = JSONDecoder()
-				let gitData = try decoder.decode(MyPoints.self, from: data)
-				print(gitData.rock.array)
-				
-			} catch let err {
-				print("Err", err)
-			}
-			}
-			.resume()
-	}
+    
+    //    func fetchPins(complation: @escaping (MyPoints?, Error?) -> Void) {
+    //
+    //        let session = URLSession(configuration: .default)
+    //        guard let url = URL(string: Global.url) else {
+    //            complation(nil, nil)
+    //            return
+    //        }
+    //        let task = session.dataTask(with: url) { (data, _, error) in
+    //            if let error = error {
+    //                complation(nil, error)
+    //                print(error.localizedDescription)
+    //                return
+    //            }
+    //            guard let data = data,
+    //                let json = try? JSONDecoder().decode(MyPoints.self, from: data)
+    //                else {
+    //                    complation(nil, nil)
+    //                    return
+    //            }
+    //            complation(json, nil)
+    //
+    //        }
+    //        task.resume()
+    //    }
+    
+    func serialize() {
+        let session = URLSession(configuration: .default)
+        
+        guard let url = URL(string: Global.url) else { return }
+        
+        let task = session.dataTask(with: url) { (data, _, error) in
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }
+            
+            guard let data = data,
+                let json = try? JSONDecoder().decode(Points.self, from: data)
+                else {
+                    return
+            }
+            let realm = try! Realm()
+            for grociery in json.pins {
+                try! realm.write {
+                    realm.add(grociery)
+                }
+            }
+        }
+        task.resume()
+    }
 }

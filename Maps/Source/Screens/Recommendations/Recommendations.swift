@@ -10,14 +10,14 @@ import UIKit
 
 class Recommendations: UIViewController {
 	
-	private let netWorker = NetWorker()
+	
 	
 	//MARK: UIViewController lifecycle
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		netWorker.getData()
+//        netWorker.getData()
 		
 	}
 	

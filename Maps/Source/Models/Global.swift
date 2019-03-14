@@ -9,5 +9,5 @@
 import Foundation
 
 struct Global {
-	static let url = "https://hortica-c67a4.firebaseio.com/points.json"
+	static let url = "https://firebasestorage.googleapis.com/v0/b/hortica-c67a4.appspot.com/o/TESTJSONHORTICA.json?alt=media&token=5ca27585-83dc-4266-aadb-9978ce6aae67"
 }

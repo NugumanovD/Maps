@@ -13,19 +13,26 @@ import CoreLocation
 import RealmSwift
 
 class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDelegate {
-
+    
     @IBOutlet weak var googleMaps: GMSMapView!
     
     private var infoWindow = MapMarkerWindow()
     fileprivate var locationMarker: GMSMarker? = GMSMarker()
-    
     var locationManager = CLLocationManager()
-    var states = [StateModel]()
+    
+    var realm = try! Realm() // Access to base
+    var items: Results<PinList>! // Access to model
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        items = realm.objects(PinList.self)
+        
         self.infoWindow = loadNib()
-        self.loadStatesData()
+        //        self.loadStatesData()
         locationManager = CLLocationManager()
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
@@ -42,37 +49,36 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
         self.googleMaps.settings.compassButton = true
         self.googleMaps.settings.zoomGestures = true
         
+        
         setupPinsOnMapView()
-
+        
+        print("This is my model \(items.count)")
     }
     
     func setupPinsOnMapView() {
-
-        for pins in states {
-            let marker = GMSMarker()
-            marker.position = CLLocationCoordinate2D(latitude: pins.latitude, longitude: pins.longitute)
+        DispatchQueue.main.async {
             
-           for category in pins.categories {
-                switch category.name {
-                case "restaurant":
-                    marker.icon = UIImage(named: "store")
-                default:
-                    marker.icon = UIImage(named: "")
+            for pin in self.items {
+                
+                DispatchQueue.main.async {
+                    
+                    let marker = GMSMarker()
+                    marker.position = CLLocationCoordinate2D(latitude: pin.latitude, longitude: pin.longitude)
+                    
+                    switch pin.type {
+                    case "rest":
+                        marker.icon = UIImage(named: "store")
+                    case "rent":
+                        marker.icon = UIImage(named: "settings")
+                    default:
+                        marker.icon = UIImage(named: "settings")
+                    }
+                    
+                    marker.map = self.googleMaps
                 }
             }
-            marker.map = self.googleMaps
-        }
-    }
-    
-    private func loadStatesData() {
-        let realmInstance = try! Realm()
-        var states = [StateModel]()
-        
-        for state in realmInstance.objects(StateModel.self) {
-            states.append(state)
         }
         
-        self.states = states
     }
     
     func didTapMyLocationButton(for mapView: GMSMapView) -> Bool {
@@ -81,7 +87,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
         if location != nil {
             googleMaps.animate(toLocation: (location?.coordinate)!)
         }
-       return true
+        return true
     }
     
     func mapView(_ mapView: GMSMapView, markerInfoWindow marker: GMSMarker) -> UIView? {
@@ -90,12 +96,12 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
         
         marker.infoWindowAnchor = CGPoint(x: 0.5, y: 0.5)
         
-        for name in states {
-            if marker.position.latitude == name.latitude && marker.position.longitude == name.longitute {
-                infoWindow.titleMarkerLabel.text = name.name
-                infoWindow.descriptionMarkerLabel.text = name.name
-            }
-        }
+                for name in items {
+                    if marker.position.latitude == name.latitude && marker.position.longitude == name.longitude {
+                        infoWindow.titleMarkerLabel.text = name.name
+                        infoWindow.descriptionMarkerLabel.text = name.name
+                    }
+                }
         return infoWindow
     }
     
@@ -110,8 +116,8 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
         print("You tapped at \(coordinate.latitude), \(coordinate.longitude)")
     }
     
-
     
-   
+    
+    
 }
 
