@@ -8,7 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		20664D051287CBA31402FB9C /* Pods_Maps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B526557C427E67CEB9423A1 /* Pods_Maps.framework */; };
-		4937050422318FDE009B5060 /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4937050322318FDE009B5060 /* test.swift */; };
+		49182A482235201D00E51229 /* Points.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49182A472235201D00E51229 /* Points.swift */; };
+		49182A4A223521F600E51229 /* NetWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49182A49223521F600E51229 /* NetWorker.swift */; };
+		499DFFF72233F6FE007B8FDF /* Recommendations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499DFFF62233F6FE007B8FDF /* Recommendations.swift */; };
+		499DFFF92233F769007B8FDF /* Recommendations.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 499DFFF82233F769007B8FDF /* Recommendations.storyboard */; };
+		49EB228A2235570500C3AF7F /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EB22892235570500C3AF7F /* Global.swift */; };
 		7B03AEC822315FE700F1E3F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B03AEC722315FE700F1E3F6 /* AppDelegate.swift */; };
 		7B03AECF22315FE800F1E3F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B03AECE22315FE800F1E3F6 /* Assets.xcassets */; };
 		7B03AED222315FE800F1E3F6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B03AED022315FE800F1E3F6 /* LaunchScreen.storyboard */; };
@@ -21,17 +25,19 @@
 		7B03AEF82231676C00F1E3F6 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B03AEE62231676C00F1E3F6 /* MapViewController.swift */; };
 		7B03AEF92231676C00F1E3F6 /* MapMarkerWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B03AEE72231676C00F1E3F6 /* MapMarkerWindow.swift */; };
 		7B03AEFA2231676C00F1E3F6 /* MapMarkerWindowView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B03AEE82231676C00F1E3F6 /* MapMarkerWindowView.xib */; };
-		7B03AEFB2231676C00F1E3F6 /* StateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B03AEE92231676C00F1E3F6 /* StateModel.swift */; };
 		7B03AEFC2231676C00F1E3F6 /* Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B03AEEB2231676C00F1E3F6 /* Controller.swift */; };
 		7B03AEFD2231676C00F1E3F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B03AEEC2231676C00F1E3F6 /* Main.storyboard */; };
 		7B03AEFE2231676C00F1E3F6 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B03AEED2231676C00F1E3F6 /* Main.swift */; };
-		7B03AF002231676C00F1E3F6 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B03AEF02231676C00F1E3F6 /* LocationService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1B526557C427E67CEB9423A1 /* Pods_Maps.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Maps.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		20290B54DC8AAC257C7CDE06 /* Pods-Maps.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Maps.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Maps/Pods-Maps.debug.xcconfig"; sourceTree = "<group>"; };
-		4937050322318FDE009B5060 /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
+		49182A472235201D00E51229 /* Points.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Points.swift; sourceTree = "<group>"; };
+		49182A49223521F600E51229 /* NetWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetWorker.swift; sourceTree = "<group>"; };
+		499DFFF62233F6FE007B8FDF /* Recommendations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recommendations.swift; sourceTree = "<group>"; };
+		499DFFF82233F769007B8FDF /* Recommendations.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Recommendations.storyboard; sourceTree = "<group>"; };
+		49EB22892235570500C3AF7F /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		558E3E8B2AE5276BCD0CA604 /* Pods-Maps.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Maps.release.xcconfig"; path = "Pods/Target Support Files/Pods-Maps/Pods-Maps.release.xcconfig"; sourceTree = "<group>"; };
 		7B03AEC422315FE700F1E3F6 /* Maps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Maps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B03AEC722315FE700F1E3F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -47,11 +53,9 @@
 		7B03AEE62231676C00F1E3F6 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		7B03AEE72231676C00F1E3F6 /* MapMarkerWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapMarkerWindow.swift; sourceTree = "<group>"; };
 		7B03AEE82231676C00F1E3F6 /* MapMarkerWindowView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapMarkerWindowView.xib; sourceTree = "<group>"; };
-		7B03AEE92231676C00F1E3F6 /* StateModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateModel.swift; sourceTree = "<group>"; };
 		7B03AEEB2231676C00F1E3F6 /* Controller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Controller.swift; sourceTree = "<group>"; };
 		7B03AEEC2231676C00F1E3F6 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		7B03AEED2231676C00F1E3F6 /* Main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
-		7B03AEF02231676C00F1E3F6 /* LocationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		49182A462235200F00E51229 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				49EB22892235570500C3AF7F /* Global.swift */,
+				49182A472235201D00E51229 /* Points.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		499DFFF52233F6C3007B8FDF /* Recommendations */ = {
+			isa = PBXGroup;
+			children = (
+				499DFFF62233F6FE007B8FDF /* Recommendations.swift */,
+				499DFFF82233F769007B8FDF /* Recommendations.storyboard */,
+			);
+			path = Recommendations;
+			sourceTree = "<group>";
+		};
 		7B03AEBB22315FE700F1E3F6 = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +129,7 @@
 		7B03AEDB2231676C00F1E3F6 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				49182A462235200F00E51229 /* Models */,
 				7B03AEDD2231676C00F1E3F6 /* Screens */,
 				7B03AEEF2231676C00F1E3F6 /* Services */,
 			);
@@ -116,9 +139,9 @@
 		7B03AEDD2231676C00F1E3F6 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				499DFFF52233F6C3007B8FDF /* Recommendations */,
 				7B03AEDE2231676C00F1E3F6 /* Settings */,
 				7B03AEE42231676C00F1E3F6 /* Map */,
-				7B03AEE92231676C00F1E3F6 /* StateModel.swift */,
 				7B03AEEA2231676C00F1E3F6 /* Main */,
 			);
 			path = Screens;
@@ -143,7 +166,6 @@
 				7B03AEE62231676C00F1E3F6 /* MapViewController.swift */,
 				7B03AEE72231676C00F1E3F6 /* MapMarkerWindow.swift */,
 				7B03AEE82231676C00F1E3F6 /* MapMarkerWindowView.xib */,
-				4937050322318FDE009B5060 /* test.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -161,7 +183,7 @@
 		7B03AEEF2231676C00F1E3F6 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				7B03AEF02231676C00F1E3F6 /* LocationService.swift */,
+				49182A49223521F600E51229 /* NetWorker.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -244,6 +266,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				499DFFF92233F769007B8FDF /* Recommendations.storyboard in Resources */,
 				7B03AEF62231676C00F1E3F6 /* Settings.storyboard in Resources */,
 				7B03AEFA2231676C00F1E3F6 /* MapMarkerWindowView.xib in Resources */,
 				7B03AED222315FE800F1E3F6 /* LaunchScreen.storyboard in Resources */,
@@ -335,16 +358,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49182A4A223521F600E51229 /* NetWorker.swift in Sources */,
 				7B03AEF92231676C00F1E3F6 /* MapMarkerWindow.swift in Sources */,
-				4937050422318FDE009B5060 /* test.swift in Sources */,
 				7B03AEF22231676C00F1E3F6 /* Language.swift in Sources */,
 				7B03AEFE2231676C00F1E3F6 /* Main.swift in Sources */,
 				7B03AEF42231676C00F1E3F6 /* SettingsLanguage.swift in Sources */,
+				499DFFF72233F6FE007B8FDF /* Recommendations.swift in Sources */,
 				7B03AEF52231676C00F1E3F6 /* UIViewController.swift in Sources */,
-				7B03AEFB2231676C00F1E3F6 /* StateModel.swift in Sources */,
+				49EB228A2235570500C3AF7F /* Global.swift in Sources */,
 				7B03AEFC2231676C00F1E3F6 /* Controller.swift in Sources */,
+				49182A482235201D00E51229 /* Points.swift in Sources */,
 				7B03AEC822315FE700F1E3F6 /* AppDelegate.swift in Sources */,
-				7B03AF002231676C00F1E3F6 /* LocationService.swift in Sources */,
 				7B03AEF32231676C00F1E3F6 /* Settings.swift in Sources */,
 				7B03AEF82231676C00F1E3F6 /* MapViewController.swift in Sources */,
 			);
@@ -485,7 +509,6 @@
 			baseConfigurationReference = 20290B54DC8AAC257C7CDE06 /* Pods-Maps.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "$(SRCROOT)/Maps/Resource/Info.plist";
@@ -506,7 +529,6 @@
 			baseConfigurationReference = 558E3E8B2AE5276BCD0CA604 /* Pods-Maps.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "$(SRCROOT)/Maps/Resource/Info.plist";
