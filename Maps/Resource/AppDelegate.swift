@@ -27,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let serializer = NetWorker()
         let realm = try! Realm()
         
-        if realm.isEmpty {
+        if realm.isEmpty  {
             try! realm.write {
                 realm.deleteAll()
             }
@@ -36,7 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         let config = Realm.Configuration(
-            schemaVersion: 3,
+            schemaVersion: 1,
             migrationBlock: { migration, oldSchemaVersion in
 
                 print("migration succeeded")

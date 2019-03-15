@@ -99,7 +99,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
                 for name in items {
                     if marker.position.latitude == name.latitude && marker.position.longitude == name.longitude {
                         infoWindow.titleMarkerLabel.text = name.name
-                        infoWindow.descriptionMarkerLabel.text = name.name
+                        infoWindow.descriptionMarkerLabel.text = name.descriprion
                     }
                 }
         return infoWindow
