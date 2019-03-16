@@ -23,16 +23,12 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
     var realm = try! Realm() // Access to base
     var items: Results<PinList>! // Access to model
     
-    
-    
-    
-    override func viewDidLoad() {
+     override func viewDidLoad() {
         super.viewDidLoad()
         
         items = realm.objects(PinList.self)
         
         self.infoWindow = loadNib()
-        //        self.loadStatesData()
         locationManager = CLLocationManager()
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
@@ -99,7 +95,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
                 for name in items {
                     if marker.position.latitude == name.latitude && marker.position.longitude == name.longitude {
                         infoWindow.titleMarkerLabel.text = name.name
-                        infoWindow.descriptionMarkerLabel.text = name.descriprion
+                        infoWindow.descriptionMarkerLabel.text = name.specification
                     }
                 }
         return infoWindow
@@ -113,7 +109,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
     
     
     func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
-        print("You tapped at \(coordinate.latitude), \(coordinate.longitude)")
+        print("You tapped at \(coordinate.longitude), \(coordinate.latitude)")
     }
     
     
