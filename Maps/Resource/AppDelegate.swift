@@ -18,40 +18,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     let placesAPIKey = "AIzaSyCMs9HduByFIyK9tKoPz9xuIxbuEIOWp8A"
+    let serializer = NetWorker()
+    let repository = Repository()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         GMSServices.provideAPIKey(placesAPIKey)
         GMSPlacesClient.provideAPIKey(placesAPIKey)
+        loadDataBase()
         //        UITabBar.appearance().tintColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
-        let serializer = NetWorker()
-        let realm = try! Realm()
-        
-        if realm.isEmpty  {
-            try! realm.write {
-                realm.deleteAll()
-            }
-            serializer.serialize()
-        }
-        
-        
-        let config = Realm.Configuration(
-            schemaVersion: 1,
-            migrationBlock: { migration, oldSchemaVersion in
-
-                print("migration succeeded")
-        })
-        Realm.Configuration.defaultConfiguration = config
-
-        let pins = realm.objects(PinList.self)
-        for pin in pins {
-            realm.beginWrite()
-            pin.owner = pin.person.first
-            try! realm.commitWrite()
-            if let owner = pin.owner {
-                print("\(owner)")
-            }
-        }
         return true
     }
     
@@ -71,6 +46,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        loadDataBase()
     }
     
     func applicationWillTerminate(_ application: UIApplication) {
@@ -78,31 +54,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func loadDataBase() {
-        //создаем объекты категорий
-        
-
-        //создаем объекты стройний на карте
-
-        
-//        let members: [String] = []()
-
-        //сохраняем наши объекты в хранилище
-
-//        let realmInstance = try! Realm()
-//        try! realmInstance.write {
-//            for category in categories {
-//                realmInstance.add(category)
-//            }
-//            for member in members {
-//                realmInstance.add(member)
-//            }
-//        }
-
-        //помечаем в Defaults что БД была установлена
-//        UserDefaults.standard.set(
-//            true,
-//            forKey: "db_install"
-//        )
+        serializer.fetchPins { (pins, error) in
+            if let mapPins = pins {
+                print(mapPins)
+                self.repository.saveOnLocalDataBase(pins: mapPins)
+            }
+        }
     }
     
     

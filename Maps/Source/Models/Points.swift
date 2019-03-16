@@ -10,49 +10,16 @@ import Foundation
 import RealmSwift
 import Realm
 
-//struct MyPoints: Codable, Hashable {
-//    let pins: [Pin]
-//    
-//    enum CodingKeys: String, CodingKey {
-//        case pins = "pins"
-//    }
-//}
-//
-//struct Pin: Codable, Hashable {
-//    let name: String
-//    let longitude: Double
-//    let latitude: Double
-//    let iconImage: String
-//    let image: String
-//    let descriprion: String
-//    let type: String
-//    
-//    enum CodingKeys: String, CodingKey {
-//        case name = "name"
-//        case longitude = "longitude"
-//        case latitude = "latitude"
-//        case iconImage = "iconImage"
-//        case image = "image"
-//        case descriprion = "descriprion"
-//        case type = "type"
-//    }
-//}
-
 class Points: Object, Decodable {
-    
     
     var pins = List<PinList>()
     
-    
     private enum PinCodingKeys: String, CodingKey {
-        
         case pins
     }
     
     convenience init(pins: List<PinList>) {
         self.init()
-        
-        
         self.pins = pins
     }
     
@@ -81,40 +48,43 @@ class Points: Object, Decodable {
 class PinList: Object, Decodable {
     
     @objc dynamic var name: String = ""
+    @objc dynamic var id: Int = 0
     @objc dynamic var longitude: Double = 0
     @objc dynamic var latitude: Double = 0
     @objc dynamic var iconImage: String = ""
     @objc dynamic var image: String = ""
-    @objc dynamic var descriprion: String = ""
+    @objc dynamic var specification: String = ""
     @objc dynamic var type: String = ""
     
     @objc dynamic var owner: Points? = nil
     
     let person = LinkingObjects(fromType: Points.self, property: "pins")
     
-    override static func primaryKey() -> String? {
-        return "name"
-    }
+//    override static func primaryKey() -> String? {
+//        return "pins"
+//    }
     
     private enum PinCodingKeys: String, CodingKey {
         case name
+        case id
         case longitude
         case latitude
         case iconImage
         case image
-        case descriprion
+        case specification
         case type
     }
     
-    convenience init(name: String, longitude: Double, latitude: Double, iconImage: String, image: String, descriprion: String, type: String) {
+    convenience init(name: String, id: Int, longitude: Double, latitude: Double, iconImage: String, image: String, specification: String, type: String) {
         self.init()
         
         self.name = name
+        self.id = id
         self.longitude = longitude
         self.latitude = latitude
         self.iconImage = iconImage
         self.image = image
-        self.descriprion = description
+        self.specification = specification
         self.type = type
        
     }
@@ -123,14 +93,15 @@ class PinList: Object, Decodable {
         let container = try decoder.container(keyedBy: PinCodingKeys.self)
         
         let name = try container.decode(String.self, forKey: .name)
+        let id = try container.decode(Int.self, forKey: .id)
         let longitude = try container.decode(Double.self, forKey: .longitude)
         let latitude = try container.decode(Double.self, forKey: .latitude)
         let iconImage = try container.decode(String.self, forKey: .iconImage)
         let image = try container.decode(String.self, forKey: .image)
-        let descriprion = try container.decode(String.self, forKey: .descriprion)
+        let specification = try container.decode(String.self, forKey: .specification)
         let type = try container.decode(String.self, forKey: .type)
         
-        self.init(name: name, longitude: longitude, latitude: latitude, iconImage: iconImage, image: image, descriprion: descriprion, type: type)
+        self.init(name: name, id: id, longitude: longitude, latitude: latitude, iconImage: iconImage, image: image, specification: specification, type: type)
     }
     
     
