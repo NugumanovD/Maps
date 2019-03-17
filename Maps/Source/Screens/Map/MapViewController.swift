@@ -25,9 +25,14 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
     
      override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         items = realm.objects(PinList.self)
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+        self.navigationController!.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController!.navigationBar.shadowImage = UIImage()
+        self.navigationController!.navigationBar.isTranslucent = true
         
+
         self.infoWindow = loadNib()
         locationManager = CLLocationManager()
         locationManager.delegate = self
@@ -53,9 +58,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
     
     func setupPinsOnMapView() {
         DispatchQueue.main.async {
-            
             for pin in self.items {
-                
                 DispatchQueue.main.async {
                     
                     let marker = GMSMarker()

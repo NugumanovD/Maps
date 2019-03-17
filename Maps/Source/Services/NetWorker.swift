@@ -11,10 +11,10 @@ import RealmSwift
 
 class NetWorker {
     
-    func fetchPins(complation: @escaping (Points?, Error?) -> Void) {
+    func fetchPins(link: String, complation: @escaping (Points?, Error?) -> Void) {
         
         let session = URLSession(configuration: .default)
-        guard let url = URL(string: Global.url) else {
+        guard let url = URL(string: link) else {
             complation(nil, nil)
             return
         }

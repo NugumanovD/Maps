@@ -17,7 +17,6 @@ class Recommendations: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-//        netWorker.getData()
 		
 	}
 	

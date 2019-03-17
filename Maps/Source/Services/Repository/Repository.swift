@@ -17,7 +17,7 @@ class Repository {
         for element in pins.pins {
             let pinID = element.id
             let realmObject = realm.objects(PinList.self).filter("id == \(pinID)")
-            print(realmObject.count)
+//            print(realmObject.count)
             // save object
             if realmObject.count == 0 {
                 let pointList = PinList()
@@ -30,7 +30,7 @@ class Repository {
                 pointList.name = element.name
                 pointList.type = element.type
                 try! realm.write {
-                    print(pointList)
+//                    print(pointList)
                     realm.add(pointList)
                 }
             } else {

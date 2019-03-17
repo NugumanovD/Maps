@@ -27,20 +27,23 @@ class Main: UIViewController, UITabBarControllerDelegate {
 	
 	func createTabBarController() {
 		
-		let recommendationsItem = createNavController(Controller.init(storyboard: "Recommendations", identifier: "Recommendations", image: "recommendations", selectedImage: "recommendationsSelected", title: "Рекомендации"))
+		let recommendationsItem = createNavController(Controller.init(storyboard: "Recommendations", identifier: "Recommendations", image: "recomendations", selectedImage: "recomendations", title: "Рекомендации"))
 		
-		let mapItem = createNavController(Controller.init(storyboard: "Map", identifier: "MapViewController", image: "map", selectedImage: "map", title: "Карта"))
+        let mapItem = createNavController(Controller.init(storyboard: "Map", identifier: "MapViewController", image: "map", selectedImage: "map", title: "Карта"))
 		
 		let settingsItem = createNavController(Controller.init(storyboard: "Settings", identifier: "Settings", image: "settings", selectedImage: "settings", title: "Настройки"))
+        
+        let weatherItem = createNavController(Controller.init(storyboard: "Weather", identifier: "Weather", image: "weather", selectedImage: "weather", title: "Погода"))
 		
-		let controllerArray = [recommendationsItem, mapItem, settingsItem]
+		let controllerArray = [weatherItem, recommendationsItem, mapItem, settingsItem]
+        
 		self.tabBarCnt.viewControllers =
 			controllerArray.map{ UINavigationController.init(rootViewController: $0)}
 		
 		self.view.addSubview(tabBarCnt.view)
 	}
 	
-	func createNavController(_ controller:Controller) -> UIViewController {
+	func createNavController(_ controller: Controller) -> UIViewController {
 		
 		var viewController = UIViewController()
 		
@@ -50,6 +53,7 @@ class Main: UIViewController, UITabBarControllerDelegate {
 		viewController.tabBarItem.selectedImage = UIImage(named: controller.selectedImage)?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal)
 		
 		viewController.title = controller.title
+        
 		return viewController
 	}
 	
@@ -58,4 +62,13 @@ class Main: UIViewController, UITabBarControllerDelegate {
 	}
 	
 	
+}
+extension UIViewController {
+    func hideNavigationBar() {
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+
+    func showNavigationBar() {
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+    }
 }

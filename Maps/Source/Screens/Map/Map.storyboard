@@ -13,7 +13,7 @@
         <!--Map View Controller-->
         <scene sceneID="f8i-eU-Izp">
             <objects>
-                <viewController restorationIdentifier="MapViewController" storyboardIdentifier="MapViewController" id="6rI-HG-EAY" customClass="MapViewController" customModule="MapGuide" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="MapViewController" storyboardIdentifier="MapViewController" id="6rI-HG-EAY" customClass="MapViewController" customModule="Maps" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KLe-2e-40h">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
