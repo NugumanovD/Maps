@@ -11,10 +11,10 @@ import RealmSwift
 
 class NetWorker {
     
-    func fetchPins(link: String, complation: @escaping (Points?, Error?) -> Void) {
+    func fetchData(byLink: String, complation: @escaping (Points?, Error?) -> Void) {
         
         let session = URLSession(configuration: .default)
-        guard let url = URL(string: link) else {
+        guard let url = URL(string: byLink) else {
             complation(nil, nil)
             return
         }
@@ -36,4 +36,33 @@ class NetWorker {
         }
         task.resume()
     }
+    
+    func genericFetchData<T>(byLink: String, complation: @escaping (T?, Error?) -> Void) where T: Decodable {
+        
+        let session = URLSession(configuration: .default)
+        guard let url = URL(string: byLink) else {
+            complation(nil, nil)
+            return
+        }
+        
+        let task = session.dataTask(with: url) { (data, _, error) in
+            if let error = error {
+                complation(nil, error)
+                print(error.localizedDescription)
+                return
+            }
+            guard let data = data,
+                let json = try? JSONDecoder().decode(T.self, from: data) else {
+                    complation(nil, nil)
+                    return
+            }
+            DispatchQueue.main.async {
+                complation(json,nil)
+            }
+        }
+        task.resume()
+    }
+    
+    
+    
 }

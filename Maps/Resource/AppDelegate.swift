@@ -54,9 +54,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func loadDataBase() {
-        serializer.fetchPins(link: Global.url) { (pins, error) in
+//        serializer.fetchData(byLink: Global.mapMarkers) { (pins, error) in
+//            if let mapPins = pins {
+////                print(mapPins)
+//                self.repository.saveOnLocalDataBase(pins: mapPins)
+//            }
+//        }
+        serializer.genericFetchData(byLink: Global.mapMarkers) { (pins: Points? , error) in
+            
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }
             if let mapPins = pins {
-//                print(mapPins)
+                print(mapPins)
                 self.repository.saveOnLocalDataBase(pins: mapPins)
             }
         }
