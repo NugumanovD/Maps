@@ -17,13 +17,39 @@
                     <view key="view" contentMode="scaleToFill" id="fz1-jg-ARP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="12.1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Syt-dd-YM9">
+                                <rect key="frame" x="69" y="203" width="195" height="125"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="C°" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oWQ-wL-VIb">
+                                <rect key="frame" x="287.5" y="228" width="45.5" height="74"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="41"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="oWQ-wL-VIb" firstAttribute="top" secondItem="EL2-RF-cAk" secondAttribute="top" constant="208" id="I6d-QK-EX4"/>
+                            <constraint firstItem="EL2-RF-cAk" firstAttribute="bottom" secondItem="Syt-dd-YM9" secondAttribute="bottom" constant="339" id="RgP-bO-9NH"/>
+                            <constraint firstItem="oWQ-wL-VIb" firstAttribute="leading" secondItem="Syt-dd-YM9" secondAttribute="trailing" constant="23.5" id="bmH-JZ-wkO"/>
+                            <constraint firstItem="Syt-dd-YM9" firstAttribute="top" secondItem="EL2-RF-cAk" secondAttribute="top" constant="183" id="hY8-nI-q6J"/>
+                            <constraint firstItem="EL2-RF-cAk" firstAttribute="bottom" secondItem="oWQ-wL-VIb" secondAttribute="bottom" constant="365" id="rza-iF-PIA"/>
+                            <constraint firstItem="EL2-RF-cAk" firstAttribute="trailing" secondItem="oWQ-wL-VIb" secondAttribute="trailing" constant="42" id="uzg-JO-73i"/>
+                            <constraint firstItem="Syt-dd-YM9" firstAttribute="leading" secondItem="EL2-RF-cAk" secondAttribute="leading" constant="69" id="wMN-R3-e6B"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="EL2-RF-cAk"/>
                     </view>
+                    <connections>
+                        <outlet property="tempLabel" destination="Syt-dd-YM9" id="J5v-8U-iLg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xKN-Ra-3Ab" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-121" y="38"/>
+            <point key="canvasLocation" x="-122.40000000000001" y="37.331334332833585"/>
         </scene>
     </scenes>
 </document>

@@ -11,10 +11,18 @@ import UIKit
 
 class WeatherViewController: UIViewController {
     //MARK: UIViewController lifecycle
+    let serialized = NetWorker()
+    
+    @IBOutlet weak var tempLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        serialized.genericFetchData(byLink: Global.testWeather) { (weather: Weather?, error)  in
+            if let json = weather {
+                print(json.main.temp)
+                self.tempLabel.text = String(json.main.tempMax)
+            }
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -32,8 +40,5 @@ class WeatherViewController: UIViewController {
         
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        
-    }
+    
 }

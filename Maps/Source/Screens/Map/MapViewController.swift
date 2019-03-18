@@ -31,6 +31,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
         self.navigationController!.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController!.navigationBar.shadowImage = UIImage()
         self.navigationController!.navigationBar.isTranslucent = true
+       
         
 
         self.infoWindow = loadNib()
@@ -56,6 +57,11 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
         print("This is my model \(items.count)")
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+    }
+    
     func setupPinsOnMapView() {
         DispatchQueue.main.async {
             for pin in self.items {
@@ -68,9 +74,9 @@ class MapViewController: UIViewController, GMSMapViewDelegate, CLLocationManager
                     case "rest":
                         marker.icon = UIImage(named: "store")
                     case "rent":
-                        marker.icon = UIImage(named: "settings")
+                        marker.icon = UIImage(named: "store")
                     default:
-                        marker.icon = UIImage(named: "settings")
+                        marker.icon = UIImage(named: "store")
                     }
                     
                     marker.map = self.googleMaps
